@@ -9,14 +9,16 @@
     <title>Blog - {% block titulo %} {% endblock titulo%}</title>
 </head>
 <body>
-    <header>
-        {% if user.is_authenticated %}
-        <p>Bienvenido {{ user.username }} </p>
-        <a href="{% url 'logout'%}">Cerrar sesión</a>
-        {% else %}
-        <a href="{% url 'login'%}">Iniciar sesión</a>
-        {% endif %}
-    </header>
+    <div class='Login'>
+        <header>
+            {% if user.is_authenticated %}
+            <p>Bienvenido {{ user.username }} </p>
+            <a href="{% url 'logout'%}">Cerrar sesión</a>
+            {% else %}
+            <a href="{% url 'login'%}">Iniciar sesión</a>
+            {% endif %}
+        </header>
+    </div>
     <header>
         <div class="container">
             <p class="logo">#NuestroBlog!</p>
