@@ -11,5 +11,5 @@ def about(request):
 def help(request):
     return render(request, 'help.html')
 
-def login(request):
-    return render(request, 'usuarios/login.html')
+# def login(request):
+#     return render(request, 'usuarios/login.html')

@@ -18,7 +18,10 @@ from django.contrib import admin
 from django.urls import path, include #importamos include para poder trabajar con las urls de noticias
 # from apps.noticias import views
 from . import views
-from django.contrib.auth import views as auth # url de login
+# url de login
+from django.contrib.auth import views as auth 
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     # path('', views.inicio, name='home'),
@@ -33,7 +36,10 @@ urlpatterns = [
     #path URL APP NOTICIA
     path('noticias/', include('apps.noticias.urls')),
 
-    #path URL APP LOGIN
+    # URL LOGIN
     path('login/', auth.LoginView.as_view(template_name= 'usuarios/login.html'), name='login'),
-    path('logout', auth.LoginView.as_view(), name='logout'),
-]
+    path('logout/', auth.LogoutView.as_view(), name='logout'),
+
+    # Registro
+    path('usuarios/', include('apps.usuarios.urls')),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
