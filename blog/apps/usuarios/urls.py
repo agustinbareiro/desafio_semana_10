@@ -5,5 +5,5 @@ app_name = 'usuarios'
 
 #URLS de app Usuarios
 urlpatterns = [
-    path('register/', views.Registro.as_view(), name='registro'),
+    path('register/', views.Registro.as_view(), name='register'),
 ]

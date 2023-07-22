@@ -54,10 +54,13 @@ header .container{
 }
 
 header nav{
+    border-top: solid 1px rgb(64, 64, 64);
+    border-bottom: solid 1px rgb(64, 64, 64);
+    justify-content: center;
     display: flex;
-    flex-direction: column;
     text-align: center;
-    padding-bottom: 25px;
+    height: 48px;
+    align-items: center;
 }
 
 header a{
